@@ -113,8 +113,6 @@ X repeated a couple of times. The size of the array should be known from the con
 It's an array of C, where C is the character type for the encoding used.
 
 # Dictionary with K:V
-K is the key type (or type*s*), V is the value type (or type*s*). You encode it by first prefixing it with the amount of pairs in the dictionary - it's an unsigned big integer (for good measure, in case you need a dictionary with 18446744073709551615 pairs). You then write the pairs - by writing the key, then the value. You repeat it for all pairs in the dictionary.
+K is the key type, V is the value type. You encode it by first prefixing it with the amount of pairs in the dictionary - it's an unsigned big integer (for good measure, in case you need a dictionary with 18446744073709551615 pairs). You then write the pairs - by writing the key, then the value. You repeat it for all pairs in the dictionary.
 
-If V contains multiple types, they are putted in the same order as in V. So, if V is [unsigned integer, byte], then we write the unsigned integer first, then the byte.
-
-Example: K is an unsigned byte. V contains an unsigned short integer, followed by an array of unsigned bytes with the short integer being the size. The example dictionary is: `{1: (2, [2, 3])}`. It's encoded as `[0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 2, 2, 3]` (`b'\0x00\0x00\0x00\0x00\0x00\0x00\0x00\0x01\0x01\0x00\0x02\0x02\0x03'`). The second example dictionary is `{1: (2, [2, 3]), 25: (5, [1, 2, 3, 4, 5])}`. It's encoded as `[0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 2, 2, 3, 25, 0, 5, 1, 2, 3, 4, 5]` (`b'\x00\x00\x00\x00\x00\x00\x00\x02\x01\x00\x02\x02\x03\x19\x00\x05\x01\x02\x03\x04\x05'`)
+Example: K is an unsigned byte. V is an unsigned short. The example dictionary is: `{1: 2}`. It's encoded as `[0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 2]` (`b'\0x00\0x00\0x00\0x00\0x00\0x00\0x00\0x01\0x01\0x00\0x02'`). The second example dictionary is `{1: 69, 25: 123}`. It's encoded as `[0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 69, 25, 0, 123]` (`b'\x00\x00\x00\x00\x00\x00\x00\x02\x01\x00E\x19\x00\x7b'`)
