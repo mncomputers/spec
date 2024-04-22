@@ -122,7 +122,8 @@ Example (signed): `b'\xff\xff\xff\xff\xff\xff\xff\xff'` is the number -1.
 Example 2 (signed): `b'\x80\x00\x00\x00\x00\x00\x00\x00'` is the number -9223372036854775808.
 
 ## Array of X
-X repeated a couple of times. The size of the array should be known from the context.
+X repeated a couple of times.
+If not mentioned otherwise, the array is length prefixed by an unsigned big integer.
 
 ## String with charset X
 It's an array of C, where C is the character type for the encoding used.
@@ -142,13 +143,16 @@ The instructions are encoded by just putting the instruction ID, then the argume
 
 ## Instructions
 
-### Jump (unsigned big int) -> 0
+### Nothing -> 0
+Does nothing.
+
+### Jump (unsigned big int) -> 1
 Jumps to an address represented by an unsigned big int
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
 |Address|Unsigned big int|The location to jump to|
 
-### Copy data -> 1
+### Copy data -> 2
 Copy data from one memory location to an another one
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -156,7 +160,7 @@ Copy data from one memory location to an another one
 |Destination address|Unsigned big int|The location to copy to|
 |Amount of bytes|Unsigned big int|The amount of bytes to copy|
 
-### Erase memory -> 2
+### Erase memory -> 3
 Erases a specific amount of bytes at a specified memory location
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -164,7 +168,7 @@ Erases a specific amount of bytes at a specified memory location
 |Amount of bytes|Unsigned big int|The amount of bytes to erase|
 
 
-### Add (unsigned byte) -> 3
+### Add (unsigned byte) -> 4
 Adds 2 numbers together
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -172,7 +176,7 @@ Adds 2 numbers together
 |Address of the second number|unsigned byte|The second number|
 |Address of the result|unsigned byte|The result|
 
-### Subtract (unsigned byte) -> 4
+### Subtract (unsigned byte) -> 5
 Subtracts numbers.
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -180,7 +184,7 @@ Subtracts numbers.
 |Address of the second number|unsigned byte|The second number|
 |Address of the result|unsigned byte|The result|
 
-### Multiply (unsigned byte) -> 5
+### Multiply (unsigned byte) -> 6
 Multiplies 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -188,7 +192,7 @@ Multiplies 2 numbers
 |Address of the second number|unsigned byte|The second number|
 |Address of the result|unsigned byte|The result|
 
-### Divide (unsigned byte) -> 6
+### Divide (unsigned byte) -> 7
 Divides 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -196,7 +200,7 @@ Divides 2 numbers
 |Address of the second number|unsigned byte|The second number|
 |Address of the result|unsigned byte|The result|
 
-### Add (signed byte) -> 7
+### Add (signed byte) -> 8
 Adds 2 numbers together
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -204,7 +208,7 @@ Adds 2 numbers together
 |Address of the second number|signed byte|The second number|
 |Address of the result|signed byte|The result|
 
-### Subtract (signed byte) -> 8
+### Subtract (signed byte) -> 9
 Subtracts numbers.
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -212,7 +216,7 @@ Subtracts numbers.
 |Address of the second number|signed byte|The second number|
 |Address of the result|signed byte|The result|
 
-### Multiply (signed byte) -> 9
+### Multiply (signed byte) -> 10
 Multiplies 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -220,7 +224,7 @@ Multiplies 2 numbers
 |Address of the second number|signed byte|The second number|
 |Address of the result|signed byte|The result|
 
-### Divide (signed byte) -> 10
+### Divide (signed byte) -> 11
 Divides 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -228,7 +232,7 @@ Divides 2 numbers
 |Address of the second number|signed byte|The second number|
 |Address of the result|signed byte|The result|
 
-### Add (unsigned short) -> 11
+### Add (unsigned short) -> 12
 Adds 2 numbers together
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -236,7 +240,7 @@ Adds 2 numbers together
 |Address of the second number|unsigned short|The second number|
 |Address of the result|unsigned short|The result|
 
-### Subtract (unsigned short) -> 12
+### Subtract (unsigned short) -> 13
 Subtracts numbers.
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -244,7 +248,7 @@ Subtracts numbers.
 |Address of the second number|unsigned short|The second number|
 |Address of the result|unsigned short|The result|
 
-### Multiply (unsigned short) -> 13
+### Multiply (unsigned short) -> 14
 Multiplies 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -252,7 +256,7 @@ Multiplies 2 numbers
 |Address of the second number|unsigned short|The second number|
 |Address of the result|unsigned short|The result|
 
-### Divide (unsigned short) -> 14
+### Divide (unsigned short) -> 15
 Divides 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -260,7 +264,7 @@ Divides 2 numbers
 |Address of the second number|unsigned short|The second number|
 |Address of the result|unsigned short|The result|
 
-### Add (signed short) -> 15
+### Add (signed short) -> 16
 Adds 2 numbers together
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -268,7 +272,7 @@ Adds 2 numbers together
 |Address of the second number|signed short|The second number|
 |Address of the result|signed short|The result|
 
-### Subtract (signed short) -> 16
+### Subtract (signed short) -> 17
 Subtracts numbers.
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -276,7 +280,7 @@ Subtracts numbers.
 |Address of the second number|signed short|The second number|
 |Address of the result|signed short|The result|
 
-### Multiply (signed short) -> 17
+### Multiply (signed short) -> 18
 Multiplies 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -284,7 +288,7 @@ Multiplies 2 numbers
 |Address of the second number|signed short|The second number|
 |Address of the result|signed short|The result|
 
-### Divide (signed short) -> 18
+### Divide (signed short) -> 19
 Divides 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -292,7 +296,7 @@ Divides 2 numbers
 |Address of the second number|signed short|The second number|
 |Address of the result|signed short|The result|
 
-### Add (unsigned int) -> 19
+### Add (unsigned int) -> 20
 Adds 2 numbers together
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -300,7 +304,7 @@ Adds 2 numbers together
 |Address of the second number|unsigned int|The second number|
 |Address of the result|unsigned int|The result|
 
-### Subtract (unsigned int) -> 20
+### Subtract (unsigned int) -> 21
 Subtracts numbers.
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -308,7 +312,7 @@ Subtracts numbers.
 |Address of the second number|unsigned int|The second number|
 |Address of the result|unsigned int|The result|
 
-### Multiply (unsigned int) -> 21
+### Multiply (unsigned int) -> 22
 Multiplies 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -316,7 +320,7 @@ Multiplies 2 numbers
 |Address of the second number|unsigned int|The second number|
 |Address of the result|unsigned int|The result|
 
-### Divide (unsigned int) -> 22
+### Divide (unsigned int) -> 23
 Divides 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -324,7 +328,7 @@ Divides 2 numbers
 |Address of the second number|unsigned int|The second number|
 |Address of the result|unsigned int|The result|
 
-### Add (signed int) -> 23
+### Add (signed int) -> 24
 Adds 2 numbers together
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -332,7 +336,7 @@ Adds 2 numbers together
 |Address of the second number|signed int|The second number|
 |Address of the result|signed int|The result|
 
-### Subtract (signed int) -> 24
+### Subtract (signed int) -> 25
 Subtracts numbers.
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -340,7 +344,7 @@ Subtracts numbers.
 |Address of the second number|signed int|The second number|
 |Address of the result|signed int|The result|
 
-### Multiply (signed int) -> 25
+### Multiply (signed int) -> 26
 Multiplies 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -348,7 +352,7 @@ Multiplies 2 numbers
 |Address of the second number|signed int|The second number|
 |Address of the result|signed int|The result|
 
-### Divide (signed int) -> 26
+### Divide (signed int) -> 27
 Divides 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -356,7 +360,7 @@ Divides 2 numbers
 |Address of the second number|signed int|The second number|
 |Address of the result|signed int|The result|
 
-### Add (unsigned big int) -> 27
+### Add (unsigned big int) -> 28
 Adds 2 numbers together
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -364,7 +368,7 @@ Adds 2 numbers together
 |Address of the second number|unsigned big int|The second number|
 |Address of the result|unsigned big int|The result|
 
-### Subtract (unsigned big int) -> 28
+### Subtract (unsigned big int) -> 29
 Subtracts numbers.
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -372,7 +376,7 @@ Subtracts numbers.
 |Address of the second number|unsigned big int|The second number|
 |Address of the result|unsigned big int|The result|
 
-### Multiply (unsigned big int) -> 29
+### Multiply (unsigned big int) -> 30
 Multiplies 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -380,7 +384,7 @@ Multiplies 2 numbers
 |Address of the second number|unsigned big int|The second number|
 |Address of the result|unsigned big int|The result|
 
-### Divide (unsigned big int) -> 30
+### Divide (unsigned big int) -> 31
 Divides 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -388,7 +392,7 @@ Divides 2 numbers
 |Address of the second number|unsigned big int|The second number|
 |Address of the result|unsigned big int|The result|
 
-### Add (signed big int) -> 31
+### Add (signed big int) -> 32
 Adds 2 numbers together
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -396,7 +400,7 @@ Adds 2 numbers together
 |Address of the second number|signed big int|The second number|
 |Address of the result|signed big int|The result|
 
-### Subtract (signed big int) -> 32
+### Subtract (signed big int) -> 33
 Subtracts numbers.
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -404,7 +408,7 @@ Subtracts numbers.
 |Address of the second number|signed big int|The second number|
 |Address of the result|signed big int|The result|
 
-### Multiply (signed big int) -> 33
+### Multiply (signed big int) -> 34
 Multiplies 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -412,7 +416,7 @@ Multiplies 2 numbers
 |Address of the second number|signed big int|The second number|
 |Address of the result|signed big int|The result|
 
-### Divide (signed big int) -> 34
+### Divide (signed big int) -> 35
 Divides 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|

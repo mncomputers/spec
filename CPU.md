@@ -6,13 +6,16 @@ The instructions are encoded by just putting the instruction ID, then the argume
 
 # Instructions
 
-## Jump (unsigned big int) -> 0
+## Nothing -> 0
+Does nothing.
+
+## Jump (unsigned big int) -> 1
 Jumps to an address represented by an unsigned big int
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
 |Address|Unsigned big int|The location to jump to|
 
-## Copy data -> 1
+## Copy data -> 2
 Copy data from one memory location to an another one
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -20,7 +23,7 @@ Copy data from one memory location to an another one
 |Destination address|Unsigned big int|The location to copy to|
 |Amount of bytes|Unsigned big int|The amount of bytes to copy|
 
-## Erase memory -> 2
+## Erase memory -> 3
 Erases a specific amount of bytes at a specified memory location
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -31,7 +34,7 @@ Erases a specific amount of bytes at a specified memory location
 <!--?generate
 output = ""
 int_types = ["unsigned byte", "signed byte", "unsigned short", "signed short", "unsigned int", "signed int", "unsigned big int", "signed big int"]
-instruction_id = 3
+instruction_id = 4
 for x in int_types:
     output += f"""## Add ({x}) -> {instruction_id}
 Adds 2 numbers together
