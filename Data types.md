@@ -107,7 +107,8 @@ Example (signed): `b'\xff\xff\xff\xff\xff\xff\xff\xff'` is the number -1.
 Example 2 (signed): `b'\x80\x00\x00\x00\x00\x00\x00\x00'` is the number -9223372036854775808.
 
 # Array of X
-X repeated a couple of times. The size of the array should be known from the context.
+X repeated a couple of times.
+If not mentioned otherwise, the array is length prefixed by an unsigned big integer.
 
 # String with charset X
 It's an array of C, where C is the character type for the encoding used.
