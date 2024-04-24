@@ -137,7 +137,7 @@ Example: K is an unsigned byte. V is an unsigned short. The example dictionary i
 
 The way how CPU instruction IDs are encoded is described in the `Data types` section.
 
-The data from the "BIOS" memory chip is loaded into the RAM at 0x7000.
+The data from the "BIOS" memory chip is loaded into the RAM at address 0.
 
 The instructions are encoded by just putting the instruction ID, then the arguments, right after each other without any additional separation.
 
