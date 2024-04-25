@@ -30,14 +30,13 @@ Erases a specific amount of bytes at a specified memory location
 |Source address|Unsigned big int|The source address to start erasing bytes from|
 |Amount of bytes|Unsigned big int|The amount of bytes to erase|
 
-
 <!--?generate
 output = ""
-int_types = ["unsigned byte", "signed byte", "unsigned short", "signed short", "unsigned int", "signed int", "unsigned big int", "signed big int"]
+int_types = ["byte", "short", "int", "big int"]
 instruction_id = 4
 for x in int_types:
     output += f"""## Add ({x}) -> {instruction_id}
-Adds 2 numbers together
+Adds 2 numbers together. The numbers can be signed (two's complement) or unsigned, it doesn't matter, so [unsigned/signed] is omitted below.
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
 |Address of the first number|{x}|The first number|
@@ -46,7 +45,7 @@ Adds 2 numbers together
 
 """
     output += f"""## Subtract ({x}) -> {instruction_id + 1}
-Subtracts numbers.
+Subtracts numbers. The numbers can be signed (two's complement) or unsigned, it doesn't matter, so [unsigned/signed] is omitted below.
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
 |Address of the first number|{x}|The first number|
@@ -55,7 +54,7 @@ Subtracts numbers.
 
 """
     output += f"""## Multiply ({x}) -> {instruction_id + 2}
-Multiplies 2 numbers
+Multiplies 2 numbers. The numbers can be signed (two's complement) or unsigned, it doesn't matter, so [unsigned/signed] is omitted below.
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
 |Address of the first number|{x}|The first number|
@@ -64,7 +63,7 @@ Multiplies 2 numbers
 
 """
     output += f"""## Divide ({x}) -> {instruction_id + 3}
-Divides 2 numbers
+Divides 2 numbers. The numbers can be signed (two's complement) or unsigned, it doesn't matter, so [unsigned/signed] is omitted below.
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
 |Address of the first number|{x}|The first number|
@@ -73,7 +72,7 @@ Divides 2 numbers
 
 """
     output += f"""## Remainder ({x}) -> {instruction_id + 4}
-Finds the remainder after dividing 2 numbers.
+Finds the remainder after dividing 2 numbers. The numbers can be signed (two's complement) or unsigned, it doesn't matter, so [unsigned/signed] is omitted below.
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
 |Address of the first number|{x}|The first number|
