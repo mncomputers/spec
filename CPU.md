@@ -72,7 +72,16 @@ Divides 2 numbers
 |Address of the result|{x}|The result|
 
 """
-    instruction_id += 4
+    output += f"""## Remainder ({x}) -> {instruction_id + 4}
+Finds the remainder after dividing 2 numbers.
+|Argument name|Data type|Purpose|
+|-------------|---------|-------|
+|Address of the first number|{x}|The first number|
+|Address of the second number|{x}|The second number|
+|Address of the result|{x}|The result (remainder)|
+
+"""
+    instruction_id += 5
 
 set_output(output.removesuffix("\n\n"))
 -->

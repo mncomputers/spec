@@ -200,7 +200,15 @@ Divides 2 numbers
 |Address of the second number|unsigned byte|The second number|
 |Address of the result|unsigned byte|The result|
 
-### Add (signed byte) -> 8
+### Remainder (unsigned byte) -> 8
+Finds the remainder after dividing 2 numbers.
+|Argument name|Data type|Purpose|
+|-------------|---------|-------|
+|Address of the first number|unsigned byte|The first number|
+|Address of the second number|unsigned byte|The second number|
+|Address of the result|unsigned byte|The result (remainder)|
+
+### Add (signed byte) -> 9
 Adds 2 numbers together
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -208,7 +216,7 @@ Adds 2 numbers together
 |Address of the second number|signed byte|The second number|
 |Address of the result|signed byte|The result|
 
-### Subtract (signed byte) -> 9
+### Subtract (signed byte) -> 10
 Subtracts numbers.
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -216,7 +224,7 @@ Subtracts numbers.
 |Address of the second number|signed byte|The second number|
 |Address of the result|signed byte|The result|
 
-### Multiply (signed byte) -> 10
+### Multiply (signed byte) -> 11
 Multiplies 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -224,7 +232,7 @@ Multiplies 2 numbers
 |Address of the second number|signed byte|The second number|
 |Address of the result|signed byte|The result|
 
-### Divide (signed byte) -> 11
+### Divide (signed byte) -> 12
 Divides 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -232,7 +240,15 @@ Divides 2 numbers
 |Address of the second number|signed byte|The second number|
 |Address of the result|signed byte|The result|
 
-### Add (unsigned short) -> 12
+### Remainder (signed byte) -> 13
+Finds the remainder after dividing 2 numbers.
+|Argument name|Data type|Purpose|
+|-------------|---------|-------|
+|Address of the first number|signed byte|The first number|
+|Address of the second number|signed byte|The second number|
+|Address of the result|signed byte|The result (remainder)|
+
+### Add (unsigned short) -> 14
 Adds 2 numbers together
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -240,7 +256,7 @@ Adds 2 numbers together
 |Address of the second number|unsigned short|The second number|
 |Address of the result|unsigned short|The result|
 
-### Subtract (unsigned short) -> 13
+### Subtract (unsigned short) -> 15
 Subtracts numbers.
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -248,7 +264,7 @@ Subtracts numbers.
 |Address of the second number|unsigned short|The second number|
 |Address of the result|unsigned short|The result|
 
-### Multiply (unsigned short) -> 14
+### Multiply (unsigned short) -> 16
 Multiplies 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -256,7 +272,7 @@ Multiplies 2 numbers
 |Address of the second number|unsigned short|The second number|
 |Address of the result|unsigned short|The result|
 
-### Divide (unsigned short) -> 15
+### Divide (unsigned short) -> 17
 Divides 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -264,7 +280,15 @@ Divides 2 numbers
 |Address of the second number|unsigned short|The second number|
 |Address of the result|unsigned short|The result|
 
-### Add (signed short) -> 16
+### Remainder (unsigned short) -> 18
+Finds the remainder after dividing 2 numbers.
+|Argument name|Data type|Purpose|
+|-------------|---------|-------|
+|Address of the first number|unsigned short|The first number|
+|Address of the second number|unsigned short|The second number|
+|Address of the result|unsigned short|The result (remainder)|
+
+### Add (signed short) -> 19
 Adds 2 numbers together
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -272,7 +296,7 @@ Adds 2 numbers together
 |Address of the second number|signed short|The second number|
 |Address of the result|signed short|The result|
 
-### Subtract (signed short) -> 17
+### Subtract (signed short) -> 20
 Subtracts numbers.
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -280,7 +304,7 @@ Subtracts numbers.
 |Address of the second number|signed short|The second number|
 |Address of the result|signed short|The result|
 
-### Multiply (signed short) -> 18
+### Multiply (signed short) -> 21
 Multiplies 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -288,7 +312,7 @@ Multiplies 2 numbers
 |Address of the second number|signed short|The second number|
 |Address of the result|signed short|The result|
 
-### Divide (signed short) -> 19
+### Divide (signed short) -> 22
 Divides 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -296,7 +320,15 @@ Divides 2 numbers
 |Address of the second number|signed short|The second number|
 |Address of the result|signed short|The result|
 
-### Add (unsigned int) -> 20
+### Remainder (signed short) -> 23
+Finds the remainder after dividing 2 numbers.
+|Argument name|Data type|Purpose|
+|-------------|---------|-------|
+|Address of the first number|signed short|The first number|
+|Address of the second number|signed short|The second number|
+|Address of the result|signed short|The result (remainder)|
+
+### Add (unsigned int) -> 24
 Adds 2 numbers together
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -304,7 +336,7 @@ Adds 2 numbers together
 |Address of the second number|unsigned int|The second number|
 |Address of the result|unsigned int|The result|
 
-### Subtract (unsigned int) -> 21
+### Subtract (unsigned int) -> 25
 Subtracts numbers.
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -312,7 +344,7 @@ Subtracts numbers.
 |Address of the second number|unsigned int|The second number|
 |Address of the result|unsigned int|The result|
 
-### Multiply (unsigned int) -> 22
+### Multiply (unsigned int) -> 26
 Multiplies 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -320,7 +352,7 @@ Multiplies 2 numbers
 |Address of the second number|unsigned int|The second number|
 |Address of the result|unsigned int|The result|
 
-### Divide (unsigned int) -> 23
+### Divide (unsigned int) -> 27
 Divides 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -328,7 +360,15 @@ Divides 2 numbers
 |Address of the second number|unsigned int|The second number|
 |Address of the result|unsigned int|The result|
 
-### Add (signed int) -> 24
+### Remainder (unsigned int) -> 28
+Finds the remainder after dividing 2 numbers.
+|Argument name|Data type|Purpose|
+|-------------|---------|-------|
+|Address of the first number|unsigned int|The first number|
+|Address of the second number|unsigned int|The second number|
+|Address of the result|unsigned int|The result (remainder)|
+
+### Add (signed int) -> 29
 Adds 2 numbers together
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -336,7 +376,7 @@ Adds 2 numbers together
 |Address of the second number|signed int|The second number|
 |Address of the result|signed int|The result|
 
-### Subtract (signed int) -> 25
+### Subtract (signed int) -> 30
 Subtracts numbers.
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -344,7 +384,7 @@ Subtracts numbers.
 |Address of the second number|signed int|The second number|
 |Address of the result|signed int|The result|
 
-### Multiply (signed int) -> 26
+### Multiply (signed int) -> 31
 Multiplies 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -352,7 +392,7 @@ Multiplies 2 numbers
 |Address of the second number|signed int|The second number|
 |Address of the result|signed int|The result|
 
-### Divide (signed int) -> 27
+### Divide (signed int) -> 32
 Divides 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -360,7 +400,15 @@ Divides 2 numbers
 |Address of the second number|signed int|The second number|
 |Address of the result|signed int|The result|
 
-### Add (unsigned big int) -> 28
+### Remainder (signed int) -> 33
+Finds the remainder after dividing 2 numbers.
+|Argument name|Data type|Purpose|
+|-------------|---------|-------|
+|Address of the first number|signed int|The first number|
+|Address of the second number|signed int|The second number|
+|Address of the result|signed int|The result (remainder)|
+
+### Add (unsigned big int) -> 34
 Adds 2 numbers together
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -368,7 +416,7 @@ Adds 2 numbers together
 |Address of the second number|unsigned big int|The second number|
 |Address of the result|unsigned big int|The result|
 
-### Subtract (unsigned big int) -> 29
+### Subtract (unsigned big int) -> 35
 Subtracts numbers.
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -376,7 +424,7 @@ Subtracts numbers.
 |Address of the second number|unsigned big int|The second number|
 |Address of the result|unsigned big int|The result|
 
-### Multiply (unsigned big int) -> 30
+### Multiply (unsigned big int) -> 36
 Multiplies 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -384,7 +432,7 @@ Multiplies 2 numbers
 |Address of the second number|unsigned big int|The second number|
 |Address of the result|unsigned big int|The result|
 
-### Divide (unsigned big int) -> 31
+### Divide (unsigned big int) -> 37
 Divides 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -392,7 +440,15 @@ Divides 2 numbers
 |Address of the second number|unsigned big int|The second number|
 |Address of the result|unsigned big int|The result|
 
-### Add (signed big int) -> 32
+### Remainder (unsigned big int) -> 38
+Finds the remainder after dividing 2 numbers.
+|Argument name|Data type|Purpose|
+|-------------|---------|-------|
+|Address of the first number|unsigned big int|The first number|
+|Address of the second number|unsigned big int|The second number|
+|Address of the result|unsigned big int|The result (remainder)|
+
+### Add (signed big int) -> 39
 Adds 2 numbers together
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -400,7 +456,7 @@ Adds 2 numbers together
 |Address of the second number|signed big int|The second number|
 |Address of the result|signed big int|The result|
 
-### Subtract (signed big int) -> 33
+### Subtract (signed big int) -> 40
 Subtracts numbers.
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -408,7 +464,7 @@ Subtracts numbers.
 |Address of the second number|signed big int|The second number|
 |Address of the result|signed big int|The result|
 
-### Multiply (signed big int) -> 34
+### Multiply (signed big int) -> 41
 Multiplies 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
@@ -416,12 +472,20 @@ Multiplies 2 numbers
 |Address of the second number|signed big int|The second number|
 |Address of the result|signed big int|The result|
 
-### Divide (signed big int) -> 35
+### Divide (signed big int) -> 42
 Divides 2 numbers
 |Argument name|Data type|Purpose|
 |-------------|---------|-------|
 |Address of the first number|signed big int|The first number|
 |Address of the second number|signed big int|The second number|
 |Address of the result|signed big int|The result|
+
+### Remainder (signed big int) -> 43
+Finds the remainder after dividing 2 numbers.
+|Argument name|Data type|Purpose|
+|-------------|---------|-------|
+|Address of the first number|signed big int|The first number|
+|Address of the second number|signed big int|The second number|
+|Address of the result|signed big int|The result (remainder)|
 
 
